@@ -1,5 +1,6 @@
 // pendulum.cpp
 #include "pendulum.h"
+#include <Arduino.h>
 
 void step_discrete(const double Ad[4][4], const double Bd[4],
                    const double x[4], double u, double x_next[4]) {
@@ -8,6 +9,6 @@ void step_discrete(const double Ad[4][4], const double Bd[4],
         for (int j = 0; j < 4; j++) {
             sum += Ad[i][j] * x[j];
         }
-        x_next[i] = sum + Bd[i] * u;
-    }
+        x_next[i] = sum + Bd[i] * u;     
+        }
 }
